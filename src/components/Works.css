@@ -1,0 +1,136 @@
+/* Works Section */
+.works {
+    padding: clamp(3rem, 5vw, 5rem) 0;
+}
+
+.project-card {
+    background: white;
+    border-radius: clamp(12px, 2vw, 16px);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(135, 80, 247, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(135, 80, 247, 0.1);
+}
+
+.project-title {
+    color: var(--secondary-color);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.project-description {
+    color: var(--text-color);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.tech-badge {
+    background-color: #f0e7ff;
+    color: var(--primary-color);
+    padding: clamp(0.4rem, 0.8vw, 0.75rem) clamp(0.75rem, 1.5vw, 1rem);
+    border-radius: 50px;
+    font-size: clamp(0.8rem, 1vw, 0.875rem);
+    font-weight: 500;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(0.6rem, 1.2vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+}
+
+.project-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Grid Layout */
+.works .row {
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Responsive Styles */
+@media (min-width: 992px) {
+    .works .col-lg-4 {
+        flex: 0 0 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .works {
+        padding: 2rem 0;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .tech-stack {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .tech-badge {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation Adjustments for Mobile */
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card,
+    .project-link {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,120 @@
+/* Resume Section */
+.resume {
+    padding: clamp(3rem, 5vw, 5rem) 0;
+}
+
+.resume .card {
+    border: 1px solid rgba(135, 80, 247, 0.1);
+    border-radius: clamp(12px, 2vw, 16px);
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.resume .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(135, 80, 247, 0.1) !important;
+}
+
+.resume .card-body {
+    padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.resume .card-title {
+    color: var(--primary-color);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.resume h4 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.resume .text-muted {
+    font-size: clamp(0.85rem, 1vw, 0.9rem);
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.resume p {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: 1.6;
+}
+
+.resume .mb-4 {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem) !important;
+}
+
+/* Grid Layout */
+.resume .row {
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Responsive Styles */
+@media (min-width: 992px) {
+    .resume .col-md-6 {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .resume .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .resume {
+        padding: 2rem 0;
+    }
+
+    .resume .card-body {
+        padding: 1.25rem;
+    }
+
+    .resume .card {
+        margin-bottom: 1rem;
+    }
+
+    .resume .mb-4 {
+        margin-bottom: 1.25rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .resume .card-body {
+        padding: 1rem;
+    }
+
+    .resume .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .resume h4 {
+        font-size: 1rem;
+    }
+
+    .resume .text-muted {
+        font-size: 0.85rem;
+    }
+
+    .resume p {
+        font-size: 0.9rem;
+    }
+
+    .resume .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* Animation Adjustments for Mobile */
+@media (prefers-reduced-motion: reduce) {
+    .resume .card {
+        transition: none !important;
+    }
+}

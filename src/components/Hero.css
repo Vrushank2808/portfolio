@@ -1,0 +1,388 @@
+/* Hero Section */
+.heros {
+    min-height: 100vh;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.background-hi {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hi-svg {
+    width: clamp(200px, 40vw, 600px);
+    height: auto;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.hi-svg text {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: clamp(0.5px, 0.2vw, 1px);
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawText 2s ease forwards, float 6s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.hero-image {
+    position: relative;
+    height: 500px;
+    opacity: 0;
+    animation: fadeInRight 1s ease-out 1s forwards;
+    z-index: 2;
+}
+
+/* Floating Tech Icons */
+.floating-elements {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.floating-element {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    z-index: 3;
+    animation: fadeInScale 0.5s ease-out forwards, float 6s ease-in-out infinite;
+}
+
+.element-1 {
+    top: 15%;
+    right: 25%;
+    animation-delay: 1.7s, 2s;
+}
+
+.element-2 {
+    top: 35%;
+    right: 15%;
+    animation-delay: 1.8s, 2.5s;
+}
+
+.element-3 {
+    top: 55%;
+    right: 30%;
+    animation-delay: 1.9s, 3s;
+}
+
+.element-4 {
+    top: 25%;
+    right: 45%;
+    animation-delay: 2s, 3.5s;
+}
+
+.element-5 {
+    top: 45%;
+    right: 5%;
+    animation-delay: 2.1s, 4s;
+}
+
+.element-6 {
+    top: 65%;
+    right: 20%;
+    animation-delay: 2.2s, 4.5s;
+}
+
+/* Entry Animations for Elements */
+.typing-container {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+.stats-section {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+    background: rgba(135, 80, 247, 0.05);
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 16px;
+    margin: clamp(1rem, 2vw, 2rem) 0;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+/* Stats Items */
+.stat-item {
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.stat-item:nth-child(1) {
+    animation-delay: 1.3s;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.stat-item:nth-child(4) {
+    animation-delay: 1.6s;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation Keyframes */
+@keyframes drawText {
+    from {
+        stroke-dashoffset: 500;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Typing Animation */
+.typing-text {
+    display: inline-block;
+    min-width: clamp(200px, 40vw, 300px);
+    min-height: clamp(60px, 10vh, 80px);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: var(--primary-color);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Styles */
+@media (min-width: 1400px) {
+    .floating-element {
+        padding: 20px;
+    }
+
+    .element-1 {
+        right: 30%;
+    }
+
+    .element-2 {
+        right: 20%;
+    }
+
+    .element-3 {
+        right: 35%;
+    }
+
+    .element-4 {
+        right: 50%;
+    }
+
+    .element-5 {
+        right: 10%;
+    }
+
+    .element-6 {
+        right: 25%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .floating-element {
+        padding: 12px;
+    }
+
+    .element-1 {
+        right: 20%;
+    }
+
+    .element-2 {
+        right: 10%;
+    }
+
+    .element-3 {
+        right: 25%;
+    }
+
+    .element-4 {
+        right: 40%;
+    }
+
+    .element-5 {
+        right: 5%;
+    }
+
+    .element-6 {
+        right: 15%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-content {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .floating-elements {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .heros {
+        min-height: auto;
+        padding-top: 1rem;
+    }
+
+    .hero-content {
+        padding: 0.5rem;
+    }
+
+    .stats-section {
+        padding: 1rem;
+    }
+
+    .stat-item {
+        padding: 0.75rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hi-svg text {
+        font-size: 28px;
+    }
+
+    .typing-text {
+        min-width: 100%;
+        min-height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .stats-section {
+        margin: 1rem 0;
+    }
+}
+
+/* Animation Adjustments for Mobile */
+@media (prefers-reduced-motion: reduce) {
+
+    .floating-element,
+    .hi-svg text,
+    .hero-content,
+    .hero-image,
+    .typing-container,
+    .stats-section,
+    .action-buttons,
+    .stat-item {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

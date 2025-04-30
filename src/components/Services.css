@@ -1,0 +1,108 @@
+/* Services Section */
+.services {
+    padding: clamp(3rem, 5vw, 5rem) 0;
+    background-color: var(--bg-off-white);
+}
+
+.services-list {
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.services-list li {
+    background: white;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(1.5rem, 3vw, 2rem) !important;
+    border-radius: clamp(12px, 2vw, 16px);
+    transition: all 0.3s ease;
+}
+
+.services-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(135, 80, 247, 0.1);
+}
+
+.services-list .fs-4 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem) !important;
+}
+
+.services-list h3 {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+}
+
+.services-list p {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    margin-bottom: 0;
+}
+
+.hover-bg-gradiant-1:hover {
+    background: linear-gradient(45deg, var(--bg-off-white), white);
+}
+
+.global-transition {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 992px) {
+    .services-list .row {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .services-list li {
+        padding: 1.5rem !important;
+    }
+
+    .services-list .row {
+        flex-direction: column;
+    }
+
+    .services-list .col-lg-4,
+    .services-list .col-lg-6 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .services {
+        padding: 2rem 0;
+    }
+
+    .services-list {
+        margin-top: 1.5rem;
+    }
+
+    .services-list li {
+        padding: 1.25rem !important;
+    }
+
+    .services-list .fs-4 {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .services-list li {
+        padding: 1rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .services-list h3 {
+        font-size: 1rem;
+    }
+
+    .services-list p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation Adjustments for Mobile */
+@media (prefers-reduced-motion: reduce) {
+    .services-list li {
+        transition: none !important;
+    }
+}
