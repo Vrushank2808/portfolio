@@ -85,7 +85,7 @@ const Hero = () => {
                                 </div>
 
                                 <div className="action-buttons">
-                                    <a href="/resume.pdf" download className="btn btn-outline-primary action-btn">
+                                    <a href="./Resume.pdf" download className="btn btn-outline-primary action-btn">
                                         Download Resume
                                         <Icon icon="material-symbols:download" width="24" height="24" />
                                     </a>
