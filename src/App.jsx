@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
 import BackToTop from './components/BackToTop';
 import './components/BackToTop.css'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Skills />
           <Testimonials />
         </main>
+        <Footer />
         <BackToTop />
       </div>
     </Router>

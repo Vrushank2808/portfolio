@@ -10,16 +10,16 @@ const Works = () => {
             link: "https://github.com/Vrushank2808/portfolio",
         },
         {
-            title: "Learning Projects",
-            description: "Various small projects built while learning web development, including todo apps, weather apps, and more.",
+            title: "Hostel Management System",
+            description: "A hostel management system built with React and Node.js, showcasing my skills and projects.",
             techStack: ["React", "Node.js", "JavaScript"],
-            link: "https://github.com/Vrushank2808",
+            link: "https://github.com/Vrushank2808/HMS-frontend",
         },
         {
-            title: "Coming Soon",
-            description: "More projects will be added as I continue my learning journey in web development.",
+            title: "Hostel Management System Backend",
+            description: "A hostel management system backend built with Node.js and MongoDB, showcasing my skills and projects.",
             techStack: ["React", "Node.js", "MongoDB"],
-            link: "https://github.com/Vrushank2808",
+            link: "https://github.com/Vrushank2808/HMS-backend",
         }
     ];
 

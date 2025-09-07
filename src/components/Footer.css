@@ -1,0 +1,34 @@
+.footer {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(135, 80, 247, 0.1);
+}
+
+.contact-list .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.contact-list .contact-item:hover {
+    color: var(--primary-color);
+}
+
+.footer-cta {
+    text-align: left;
+}
+
+.footer-bottom {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(135, 80, 247, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}

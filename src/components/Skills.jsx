@@ -15,10 +15,10 @@ const Skills = () => {
         {
             category: 'Backend',
             items: [
-                { name: 'Node.js', level: 10 },
-                // { name: 'Express', level: 75 },
-                // { name: 'MongoDB', level: 70 },
-                // { name: 'RESTful APIs', level: 80 }
+                { name: 'Node.js', level: 80 },
+                { name: 'Express', level: 75 },
+                { name: 'MongoDB', level: 70 },
+                { name: 'RESTful APIs', level: 80 }
             ]
         },
         {
