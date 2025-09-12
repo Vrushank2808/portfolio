@@ -16,13 +16,13 @@ const Resume = () => {
             id: 1,
             role: 'Web Development Learner',
             company: 'Red & White Multimedia',
-            year: '2023 - Present',
+            year: '2023 - 2025',
             description: 'Currently learning and building projects in web development, focusing on React, Node.js, and full-stack development. Building personal projects to enhance skills and understanding of modern web technologies.'
         }
     ];
 
     return (
-        <section className="resume my-5 pt-5" id="resume">
+        <section className="resume my-5 pt-5" id="education">
             <div className="container pt-5">
                 <div className="m-auto text-center">
                     <h2 className="display-6 heading heading-1">My Journey</h2>

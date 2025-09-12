@@ -12,7 +12,7 @@ const Header = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
 
-            const sections = ['services', 'works', 'resume', 'skills', 'testimonials'];
+            const sections = ['services', 'works', 'education', 'skills', 'testimonials'];
             const currentSection = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -89,14 +89,14 @@ const Header = () => {
                             </li>
                             <li className="nav-item mx-2 pt-2 p-lg-0 position-relative">
                                 <a
-                                    className={`nav-link theme-secondary ${activeSection === 'resume' ? 'active' : ''}`}
-                                    href="#resume"
+                                    className={`nav-link theme-secondary ${activeSection === 'education' ? 'active' : ''}`}
+                                    href="#education"
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        handleLinkClick('resume');
+                                        handleLinkClick('education');
                                     }}
                                 >
-                                    Resume
+                                    Education
                                 </a>
                             </li>
                             <li className="nav-item mx-2 pt-2 p-lg-0 position-relative">
