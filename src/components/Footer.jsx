@@ -2,6 +2,23 @@ import { Icon } from '@iconify/react';
 import './Footer.css';
 
 const Footer = () => {
+    const emailAddress = 'vrushankgotawala@gmail.com';
+
+    const handleEmailClick = async (e) => {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone/i.test(navigator.userAgent);
+        if (isMobile) return;
+        e.preventDefault();
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(emailAddress);
+            }
+        } catch {
+            void 0;
+        }
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <footer className="footer bg-off-white" id="contact">
             <div className="container">
@@ -11,9 +28,9 @@ const Footer = () => {
                         <p className="mb-4">I'm open to freelance work, internships, and collaboration.</p>
 
                         <div className="d-flex flex-column gap-2 contact-list">
-                            <a className="contact-item" href="mailto:vrushankgotawala@gmail.com">
+                            <a className="contact-item" href={`mailto:${emailAddress}`} onClick={handleEmailClick}>
                                 <Icon icon="mdi:email-outline" width="22" height="22" />
-                                <span>vrushankgotawala@gmail.com</span>
+                                <span>{emailAddress}</span>
                             </a>
                             <a className="contact-item" href="tel:+919601294940">
                                 <Icon icon="mdi:phone-outline" width="22" height="22" />
@@ -46,7 +63,8 @@ const Footer = () => {
                             </a>
                             <a
                                 className="btn btn-outline-primary social-btn"
-                                href="mailto:vrushankgotawala@gmail.com"
+                                href={`mailto:${emailAddress}`}
+                                onClick={handleEmailClick}
                                 aria-label="Email"
                             >
                                 <Icon icon="mdi:email-outline" width="22" height="22" />
@@ -58,7 +76,7 @@ const Footer = () => {
                         <div className="footer-cta card p-4">
                             <h3 className="h5 mb-2">Have a project in mind?</h3>
                             <p className="mb-3">Send me a message and I'll get back to you soon.</p>
-                            <a href="mailto:vrushankgotawala@gmail.com" className="btn btn-outline-primary align-self-start">
+                            <a href={`mailto:${emailAddress}`} onClick={handleEmailClick} className="btn btn-outline-primary align-self-start">
                                 Contact Me
                                 <Icon icon="material-symbols:arrow-outward-rounded" width="20" height="20" />
                             </a>

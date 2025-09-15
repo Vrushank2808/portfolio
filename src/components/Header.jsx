@@ -8,11 +8,13 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
 
+    const emailAddress = 'vrushankgotawala@gmail.com';
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
 
-            const sections = ['services', 'works', 'education', 'skills', 'testimonials'];
+            const sections = ['services', 'works', 'resume', 'skills', 'testimonials'];
             const currentSection = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -43,13 +45,35 @@ const Header = () => {
         }
     };
 
+    const handleEmailClick = async (e) => {
+        // On desktop, provide a graceful fallback if no mail client is configured
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone/i.test(navigator.userAgent);
+        if (isMobile) {
+            // Let mobile handle via native mail client
+            return; // allow default mailto navigation
+        }
+
+        // Prevent default on desktop and do fallbacks
+        e.preventDefault();
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(emailAddress);
+            }
+        } catch {
+            void 0; // no-op
+        }
+
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <header className={`header-area ${isScrolled ? 'header-sticky sticky-out' : ''}`}>
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a className="navbar-brand" href="mailto:vrushankgotawala@gmail.com">
+                    <a className="navbar-brand" href={`mailto:${emailAddress}`} onClick={handleEmailClick}>
                         <span className="theme-secondary heading-email fs-6 d-none d-md-inline-block">
-                            vrushankgotawala@gmail.com
+                            {emailAddress}
                         </span>
                     </a>
                     <button
@@ -89,14 +113,14 @@ const Header = () => {
                             </li>
                             <li className="nav-item mx-2 pt-2 p-lg-0 position-relative">
                                 <a
-                                    className={`nav-link theme-secondary ${activeSection === 'education' ? 'active' : ''}`}
-                                    href="#education"
+                                    className={`nav-link theme-secondary ${activeSection === 'resume' ? 'active' : ''}`}
+                                    href="#resume"
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        handleLinkClick('education');
+                                        handleLinkClick('resume');
                                     }}
                                 >
-                                    Education
+                                    Resume
                                 </a>
                             </li>
                             <li className="nav-item mx-2 pt-2 p-lg-0 position-relative">

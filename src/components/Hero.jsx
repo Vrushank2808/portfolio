@@ -89,6 +89,10 @@ const Hero = () => {
                                         Download Resume
                                         <Icon icon="material-symbols:download" width="24" height="24" />
                                     </a>
+                                    <a href="https://drive.google.com/file/d/1xjUBKj543mz3bnl-chF3JCP_29WGF1cc/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary action-btn">
+                                        View Certificate
+                                        <Icon icon="mdi:certificate" width="24" height="24" />
+                                    </a>
                                     <a href="https://www.linkedin.com/in/vrushank-gotawala-160671363" target="_blank" rel="noopener noreferrer"
                                         className="btn btn-outline-primary action-btn">
                                         <Icon icon="jam:linkedin" width="24" height="24" />
